@@ -1,4 +1,4 @@
-github_repository = ''
+github_repository = 'git@github.com:dwettstein/cloud-computing-2016-WIS-Client.git'
 
 raise 'You have to fill github_repository variable' if github_repository.empty?
 

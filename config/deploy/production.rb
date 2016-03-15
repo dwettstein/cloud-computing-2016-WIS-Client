@@ -1,7 +1,7 @@
 # set your params
 
-identity_file = ''
-host = ''
+identity_file = '/home/ubuntu/.ssh/id_rsa'
+host = '172.16.1.83'
 user = 'ubuntu'
 port = 22
 
