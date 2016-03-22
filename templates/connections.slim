@@ -1,9 +1,9 @@
 h2
   | Connections
 
-form action="#"
+form action="https://leave-the-cloud-saas-app.herokuapp.com/connections"
 
-  p
-  | This form have to be filled
+  == param_input("From", "from")
+  == param_input("To", "to")
 
   input.btn.btn-primary.right#submit type="submit" value="Send"

@@ -1,9 +1,8 @@
 h2
   | Weather
 
-form action="#"
+form action="https://leave-the-cloud-saas-app.herokuapp.com/weather"
 
-  p
-  | This form have to be filled
+  == param_input("IP", "ip", get_browser_ip())
 
   input.btn.btn-primary.right#submit type="submit" value="Send"

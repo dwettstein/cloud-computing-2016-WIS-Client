@@ -3,6 +3,6 @@ h2
 
 form action="https://leave-the-cloud-saas-app.herokuapp.com/ip"
 
-  == param_input("ip", @client_ip)
+  == param_input("IP", "ip", get_browser_ip())
 
   input.btn.btn-primary.right#submit type="submit" value="Send"

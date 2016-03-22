@@ -12,7 +12,6 @@ get '/' do
 end
 
 get '/ip' do
-  @client_ip = request.ip # IP also in @env['REMOTE_ADDR']
   @page = 'ip'
   slim :index
 end
@@ -50,4 +49,11 @@ end
 get '/future_weathers' do
   @page = 'future_weathers'
   slim :index
+end
+
+def get_browser_ip()
+  if @client_ip == nil
+    @client_ip = request.ip # IP also in @env['REMOTE_ADDR']
+  end
+  return @client_ip
 end

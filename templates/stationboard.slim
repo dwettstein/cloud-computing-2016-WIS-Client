@@ -1,9 +1,10 @@
 h2
   | Station Board
 
-form action="#"
+form action="https://leave-the-cloud-saas-app.herokuapp.com/stationboard"
 
-  p
-  | This form have to be filled
+  == param_input("Location", "query")
+  == param_input("X-Coordinate", "x")
+  == param_input("Y-Coordinate", "y")
 
   input.btn.btn-primary.right#submit type="submit" value="Send"
