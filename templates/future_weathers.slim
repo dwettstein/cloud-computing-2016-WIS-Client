@@ -1,9 +1,9 @@
 h2
   | Future Weathers
 
-form action="#"
-
-  p
-  | This form have to be filled
+form action="https://leave-the-cloud-saas-app.herokuapp.com/future_weathers"
+  
+  == param_input("x")
+  == param_input("ip")
 
   input.btn.btn-primary.right#submit type="submit" value="Send"

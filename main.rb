@@ -6,7 +6,13 @@ before do
   @year = 2016
 end
 
+get '/' do
+  @page = 'index'
+  slim :index
+end
+
 get '/ip' do
+  @client_ip = request.ip # IP also in @env['REMOTE_ADDR']
   @page = 'ip'
   slim :index
 end
