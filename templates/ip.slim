@@ -1,7 +1,7 @@
 h2
   | IP
 
-form action="https://leave-the-cloud-saas-app.herokuapp.com/ip"
+form action="#{@heroku_api}/ip"
 
   == param_input("IP", "ip", get_browser_ip())
 

@@ -1,7 +1,7 @@
 h2
   | Future Weathers
 
-form action="https://leave-the-cloud-saas-app.herokuapp.com/future_weathers"
+form action="#{@heroku_api}/future_weathers"
   
   == param_input("IP", "ip", get_browser_ip())
   == dropdown_input("Forecast Days", "x", [1, 2, 3, 4, 5], false)

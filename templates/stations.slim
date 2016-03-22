@@ -1,7 +1,7 @@
 h2
   | Stations
 
-form action="https://leave-the-cloud-saas-app.herokuapp.com/stations"
+form action="#{@heroku_api}/stations"
 
   == param_input("IP", "ip", get_browser_ip())
 

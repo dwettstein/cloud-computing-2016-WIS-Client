@@ -1,7 +1,7 @@
 h2
   | Locations
 
-form action="https://leave-the-cloud-saas-app.herokuapp.com/locations"
+form action="#{@heroku_api}/locations"
 
   == param_input("Location", "query")
   == param_input("X-Coordinate", "x")

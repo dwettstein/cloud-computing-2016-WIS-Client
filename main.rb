@@ -4,6 +4,7 @@ before do
   @pages = %w"ip locations connections stationboard weather stations weathers future_weathers"
   @author = 'IIUN'
   @year = 2016
+  @heroku_api = "https://leave-the-cloud-saas-app.herokuapp.com" # No backslash at end.
 end
 
 get '/' do

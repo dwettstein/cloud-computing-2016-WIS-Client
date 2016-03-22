@@ -1,7 +1,7 @@
 h2
   | Connections
 
-form action="https://leave-the-cloud-saas-app.herokuapp.com/connections"
+form action="#{@heroku_api}/connections"
 
   == param_input("From", "from")
   == param_input("To", "to")

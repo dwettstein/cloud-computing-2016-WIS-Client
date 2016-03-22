@@ -1,8 +1,10 @@
 h2
   | Weather
 
-form action="https://leave-the-cloud-saas-app.herokuapp.com/weather"
+form action="#{@heroku_api}/weather"
 
-  == param_input("IP", "ip", get_browser_ip())
+  == param_input("City", "q")
+  == param_input("Latitude", "lat")
+  == param_input("Longitude", "lon")
 
   input.btn.btn-primary.right#submit type="submit" value="Send"

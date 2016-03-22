@@ -1,7 +1,7 @@
 h2
   | Weathers
 
-form action="https://leave-the-cloud-saas-app.herokuapp.com/weathers"
+form action="#{@heroku_api}/weathers"
 
   == param_input("IP", "ip", get_browser_ip())
   == dropdown_input("Sort by", "sort", ["temperature", "humidity", "pressure", "cloud", "wind"], true)
