@@ -2,11 +2,13 @@ load 'config/sinatra.rb'
 
 before do
   @pages = %w"ip locations connections stationboard weather stations weathers future_weathers"
-  @author = 'IIUN'
+  @author = 'Reto Schiegg, David Wettstein'
   @year = 2016
+  # Define the URL of the Heroku App. Will be used within the templates.
   @heroku_api = "https://leave-the-cloud-saas-app.herokuapp.com" # No backslash at end.
 end
 
+# Added home route.
 get '/' do
   @page = 'index'
   slim :index

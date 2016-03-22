@@ -8,6 +8,7 @@ module SlimHelpers
     </div>"
   end
   
+  # Created a slim helper for a dropdown input field for the forms.
   def dropdown_input(friendly_name, name, dropdown_elements, has_empty_element, default_element=-1)
     @options_string = has_empty_element ? "<option></option>" : ""
     for i in 0..(dropdown_elements.length-1)

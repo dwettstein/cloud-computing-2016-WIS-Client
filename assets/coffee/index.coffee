@@ -21,7 +21,8 @@ $(document).on 'ready', () ->
       alert 'You have to fill the "action" attribut of the form with the target url of your API'
       return false
 
-    params = $this.find("input[type='text']").filter(-> return this.value).serialize()
+    # Why would a filter be useful here?! Removed it.
+    params = $this.find("*").filter(-> return this.value).serialize()
     url += '?' + params if params.length
 
     $.getJSON url, (data) ->
