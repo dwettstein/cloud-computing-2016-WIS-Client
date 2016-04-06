@@ -1,11 +1,54 @@
-# WIS-client
+# WIS-Client
 Simple web page for REST calls, teaching project for purpose of practical works.
 
-# Description of our progress
+#### Authors:
+- Reto Schiegg
+- David Wettstein
+
+#### Git repositories:
+- WIS-Client: https://github.com/dwettstein/cloud-computing-2016-WIS-Client
+- CCS-REST: https://github.com/dwettstein/cloud-computing-2016-CCS-REST
+
+#### Production deployments:
+- WIS-Client: http://clusterinfo.unineuchatel.ch:10103/
+- CCS-REST: https://leave-the-cloud-saas-app.herokuapp.com/
+
+# Description of the project
+
+![Architecture Overview](https://raw.githubusercontent.com/dwettstein/cloud-computing-2016-WIS-Client/master/Architecture_Overview.png)
 
 ## Setup
 
-TODO: David
+#### Used technologies
+- [Ruby](https://www.ruby-lang.org) (version 2.2.4)
+- [Sinatra](http://www.sinatrarb.com/)
+- [Slim](http://slim-lang.com/)
+- [Capistrano](http://capistranorb.com/)
+
+#### Run the CCS-REST app
+Go into your repository location and either run the following commands in your shell:
+```shell
+bundle install
+bundle exec puma -C config/puma.rb
+```
+or run the script `run.sh`.
+
+Then go to: `http://localhost:4000`
+
+#### Run the WIS-Client app
+(Same as above...)
+
+Then go to: `http://localhost:3000`
+
+#### Deployment
+
+For the deployment of the CCS-REST application, we are using Heroku and have set up an automatic build by connecting the GitHub repository. This is really handy and straight forward.
+
+The WIS-Client application is deployed by using [Capistrano](http://capistranorb.com/), which is a remote server automation and deployment tool written in Ruby.
+For deploying run the following command (SSH keys are required for authentication):
+```shell
+bundle exec cap production deploy
+```
 
 ## RESTful-APIs
 
@@ -29,7 +72,7 @@ The `/future_weathers` route is similar to the `/weather` route except for the p
 In addition, the routes `/weathers` and `/future_weathers` support sorting. The data can be sorted by adding the optional parameter `sort` with one of the following values: `temperature`, `humidity`, `pressure`, `wind`, `cloud`. If no sort parameter is present, the data is sorted by the temperature.
 
 
-### Error handling
+#### Error handling
 
 As web service requests mostly have required and optional parameters, we decided to implement an user friendly error handling by sending an error message to the user with an explanation what went wrong. As this procedure is used in almost all web service requests, an additional function named `doError` is defined which creates the corresponding JSON error response. Because most functions need error handling, we define two helper functions `hasAllParams` and `hasOneParam` to check if a request has the designated parameters.
 
@@ -38,7 +81,7 @@ As web service requests mostly have required and optional parameters, we decided
 
 TODO: David
 
-### SLIM
+#### SLIM
 
 TODO: David
 
