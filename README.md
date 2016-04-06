@@ -15,7 +15,7 @@ Simple web page for REST calls, teaching project for purpose of practical works.
 
 # Description of the project
 
-![Architecture Overview](../blob/master/Architecture_Overview.png?raw=true)
+![Architecture Overview](Architecture_Overview.png?raw=true)
 
 ## Setup
 
