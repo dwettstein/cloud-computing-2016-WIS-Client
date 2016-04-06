@@ -1,0 +1,19 @@
+h2
+	== "Train station near your location: " + @departing_station_name.to_s
+	
+- unless @destinations == nil || @destinations.empty?
+    table[class="table table-bordered table-hover"]
+      tr
+	    th.destination = "Destination"
+	    th.weather = "Weather"
+	    th.departure = "Departure"
+	    th.platform = "Platform"
+      - @destinations.each do |destination|
+        tr
+          td.destination = destination["destination"]["name"].to_s
+          | <td><img src="http://openweathermap.org/img/w/#{destination["weather"]["weather"][0]["icon"].to_s}.png">   #{destination["weather"]["weather"][0]["description"].to_s}, #{destination["weather"]["main"]["temp"].to_i - 273}° Celsius</td>
+          td.departure = destination["departure"].to_s
+          td.platform = destination["platform"].to_s
+- else
+    p
+      | No destinations found.
