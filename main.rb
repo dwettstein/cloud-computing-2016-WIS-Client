@@ -70,11 +70,18 @@ end
 
 def get_location_overview()
   current_ip = get_browser_ip()
-  
   weathers_url = @heroku_api + "/weathers?ip=" + current_ip
   weathers_uri = URI(URI::encode(weathers_url))
   weathers_response = Net::HTTP.get_response(weathers_uri)
-  weathers = JSON.parse(weathers_response.body)
-  destinations = weathers["weathers"]
+  begin
+    weathers = JSON.parse(weathers_response.body)
+    if weathers.key?("errors")
+      destinations = Array.new
+    else
+      destinations = weathers["weathers"]
+    end
+  rescue JSON::ParserError => err
+    destinations = Array.new
+  end
   return destinations
 end
